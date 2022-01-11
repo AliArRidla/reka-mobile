@@ -1,7 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:reka/screens/splash/splash_screen.dart';
+// import 'package:reka/screens/splash/splash_screen.dart';
 import 'package:reka/size_config.dart';
 
 class LoadingScreen extends StatelessWidget {
@@ -9,55 +12,50 @@ class LoadingScreen extends StatelessWidget {
   static String routeName = "/loading";
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
-    return const Scaffold(
-      body: Body(),
+    return MaterialApp(
+      title: 'Splash Screen',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class Body extends StatefulWidget {
-  const Body({Key? key}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
-  State<Body> createState() => _BodyState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _BodyState extends State<Body> {
+class _MyHomePageState extends State<MyHomePage> {
   @override
-  void initstate() {
+  void initState() {
     super.initState();
-    Timer(
-      Duration(seconds: 3),
-      () => Navigator.pushNamed(context, SplashScreen.routeName),
-    );
+    Timer(Duration(seconds: 3),
+        () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SplashScreen(),),),);
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Image(
-          image: AssetImage("assets/images/logo.png"),
-        ),
-      ),
+        color: Colors.white,
+        child: Image(image: AssetImage("assets/images/logo.png"),),);
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("GeeksForGeeks")),
+      body: Center(
+          child: Text(
+        "Home page",
+        textScaleFactor: 2,
+      )),
     );
   }
-  // Widget build(BuildContext context) {
-  //   return SafeArea(
-  //     child: Container(
-  //       child: Center(
-  //         child: InkWell(
-  //           onTap: () {
-  //             // Navigator.pushNamed(context, SplashScreen.routeName);
-  //           },
-  //           child: Image(
-  //             image: AssetImage("assets/images/logo.png"),
-  //             width: 100,
-  //           ),
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
 }

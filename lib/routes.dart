@@ -9,6 +9,7 @@ import 'package:reka/screens/splash/splash_screen.dart';
 // All our routes will be available here
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
+  // ignore: prefer_const_constructors
   LoadingScreen.routeName: (context) => LoadingScreen(),
   
 };
