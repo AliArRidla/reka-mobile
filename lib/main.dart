@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reka/routes.dart';
-import 'package:reka/screens/splash/splash_screen.dart';
+import 'package:reka/screens/loading_screen.dart';
 import 'package:reka/theme.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: theme(),
       // home: SplashScreen(),
       // We use routeName so that we dont need to remember the name
-      initialRoute: SplashScreen.routeName,
+      initialRoute: LoadingScreen.routeName,
       routes: routes,
     );
   }
