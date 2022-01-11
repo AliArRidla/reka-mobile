@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:reka/size_config.dart';
 
 
-const kPrimaryColor = Color(0xFFFF7643);
-const kPrimaryLightColor = Color(0xFFFFECDF);
+
+const kPrimaryColor = Color(0xFF01579B);
+const kPrimaryLightColor = Color(0xFFF1E6FF);
+
+// const kPrimaryColor = Color(0xFFFF7643);
+// const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
