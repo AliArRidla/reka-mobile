@@ -3,15 +3,15 @@ import 'package:reka/constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
-
   final Color color, textColor;
   const RoundedButton({
     Key? key,
     required this.text,
+    required this.press,
     this.color = kPrimaryColor,
     this.textColor = Colors.white,
   }) : super(key: key);
-
+  final Function? press;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class RoundedButton extends StatelessWidget {
         text,
         style: TextStyle(color: textColor),
       ),
-      onPressed: (){},
+      onPressed: press as void Function()?,
       style: ElevatedButton.styleFrom(
           primary: color,
           padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
@@ -44,3 +44,4 @@ class RoundedButton extends StatelessWidget {
     );
   }
 }
+

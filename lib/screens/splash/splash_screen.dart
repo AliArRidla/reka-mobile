@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reka/screens/splash/component/body.dart';
+// import 'package:reka/screens/splash/component/body.dart';
+import 'package:reka/screens/Welcome/components/body.dart';
 
 import '../../size_config.dart';
 

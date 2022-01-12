@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:reka/screens/Login/password_screen.dart';
 import 'package:reka/screens/loading_screen.dart';
 // import 'package:planmaintance/Screens/Login/components/background.dart';
 // import 'package:planmaintance/Screens/Signup/signup_screen.dart';
@@ -10,7 +9,7 @@ import 'package:reka/screens/loading_screen.dart';
 // import 'package:flutter_svg/svg.dart';
 
 import '../../../components/rounded_button.dart';
-import '../../../components/rounded_input_field.dart';
+// import '../../../components/rounded_input_field.dart';
 import '../../../components/rounded_password_field.dart';
 import '../../Welcome/components/background.dart';
 
@@ -34,34 +33,27 @@ class Body extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w800, fontSize: 40,fontFamily: 'Larsseit'),
             ),
             Text(
-              "What's your Email?",
+              "Input Your Password",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.03),
             SizedBox(height: size.height * 0.03),
-            RoundedInputField(
-              hintText: "Your Email",
+            RoundedPasswordField(
               onChanged: (value) {},
             ),
-            // RoundedPasswordField(
-            //   onChanged: (value) {},
-            // ),
             RoundedButton(
-              text: "C o n t i n u e",
+              text: "L O G I N",
               press: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return PasswordScreen();
+                      return MyHomePage();
                     },
                   ),
                 );
               },
             ),
-            // RoundedButton(
-            //   text: "LOGIN",
-            // ),
             SizedBox(height: size.height * 0.03),
             // // AlreadyHaveAnAccountCheck(
               //  press: 
