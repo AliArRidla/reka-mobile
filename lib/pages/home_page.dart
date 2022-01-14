@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:reka/pages/history_page.dart';
+import 'package:reka/pages/settings_page.dart';
 import 'package:reka/theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,9 +13,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   // data dummy
   final List<Map> myProducts =
-      List.generate(100000, (index) => {"id": index, "name": "Product $index"})
+      List.generate(10, (index) => {"id": index, "name": "Product $index"})
           .toList();
-  int _selectedIndex = 0;
+  int selectedPage = 2;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -31,11 +33,7 @@ class _HomePageState extends State<HomePage> {
     ),
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  final List<Widget> _myPages = [HomePage(), HistoryPage(), SettingPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -66,64 +64,10 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: defaultmargin),
-        child: Center(
-          child: Column(
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Dashboard Mesin",
-                      style: headingTextStyle,
-                    ),
-                    Text(
-                      "Silahkan pilih mesin yang akan di check",
-                      style: tigaTextStyle,
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2),
-                    itemCount: myProducts.length,
-                    itemBuilder: (BuildContext ctx, index) {
-                      // return Container(
-                      //   alignment: Alignment.center,
-                      //   child: Text(myProducts[index]["name"]),
-                      //   decoration: BoxDecoration(
-                      //       color: Colors.amber,
-                      //       borderRadius: BorderRadius.circular(15)),
-                      // );
-
-                      return Container(
-                        margin: EdgeInsets.all(15),
-                        height: 127,
-                        decoration: BoxDecoration(
-                          color: Color(0xfff1f1f1),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Text(myProducts[index]["name"]),
-                        ),
-                      );
-                    }),
-              ),
-              // SizedBox(
-              //   height: MediaQuery.of(context).size.height,
-              //   child:
-              // )
-            ],
-          ),
-        ),
-      ),
+      body: _myPages[selectedPage],
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        // currentIndex:1,
+        items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Dashboard',
@@ -140,9 +84,14 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Colors.pink,
           ),
         ],
-        currentIndex: _selectedIndex,
+        currentIndex: selectedPage,
+        showUnselectedLabels: true,
         selectedItemColor: primaryColor,
-        onTap: _onItemTapped,
+        onTap: (index) {
+          setState(() {
+            selectedPage = index;
+          });
+        },
       ),
     );
   }

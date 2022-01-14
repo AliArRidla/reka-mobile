@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:reka/components/default_button.dart';
 import 'package:reka/theme.dart';
 
 class SignInPage extends StatelessWidget {
