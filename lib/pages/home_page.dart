@@ -40,14 +40,37 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 25),
+          child: Image(
+            image: AssetImage("assets/images/profile.png"),
+          ),
+        ),
+        title: Container(
+          width: 60,
+          child: Image(
+            image: AssetImage("assets/images/logo.png"),
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 25),
+            child: Image(
+              image: AssetImage("assets/images/search.png"),
+            ),
+          )
+        ],
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: defaultmargin),
         child: Center(
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 112),
+                margin: EdgeInsets.only(top: 10),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
