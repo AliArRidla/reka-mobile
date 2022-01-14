@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reka/pages/home_page.dart';
 import 'package:reka/pages/sign_in_page.dart';
 import 'package:reka/pages/splash_page.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashPage(),
         '/sign-in': (context) => SignInPage(),
+        '/home': (context) => HomePage(),
       },
     );
   }

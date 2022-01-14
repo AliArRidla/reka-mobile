@@ -19,6 +19,19 @@ TextStyle satuTextStyle = GoogleFonts.poppins(
   fontSize: 40,
 );
 
+// 
+TextStyle buttonTextStyle = GoogleFonts.poppins(
+  color: Colors.white,
+  fontWeight: FontWeight.w500,
+  fontSize: 20,
+);
+
+TextStyle headingTextStyle = GoogleFonts.poppins(
+  color: primaryTextColor,
+  fontWeight: FontWeight.w500,
+  fontSize: 20,
+);
+
 // tiga
 TextStyle duaTextStyle = GoogleFonts.poppins(
   color: primaryTextColor,

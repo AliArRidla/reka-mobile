@@ -75,7 +75,7 @@ class SignInPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Email Addres', style: duaTextStyle),
+            Text('Password', style: duaTextStyle),
             SizedBox(),
             Container(
               height: 50,
@@ -90,7 +90,9 @@ class SignInPage extends StatelessWidget {
                     Image.asset(
                       "assets/images/lock.png",
                     ),
-                    SizedBox(width: 20,),
+                    SizedBox(
+                      width: 20,
+                    ),
                     Expanded(
                       child: TextFormField(
                         decoration: InputDecoration.collapsed(
@@ -113,20 +115,18 @@ class SignInPage extends StatelessWidget {
         width: double.infinity,
         margin: EdgeInsets.only(top: 30),
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, "/home");
+          },
           style: TextButton.styleFrom(
-              backgroundColor: Color(0xff2f539d),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              )),
-          child: const Text(
-            "Login",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontFamily: 'Larsseit',
-              fontWeight: FontWeight.w500,
+            backgroundColor: Color(0xff2f539d),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
             ),
+          ),
+          child: Text(
+            "Login",
+            style: buttonTextStyle,
           ),
         ),
       );
@@ -137,7 +137,8 @@ class SignInPage extends StatelessWidget {
         margin: EdgeInsets.only(bottom: 30),
         child: Center(
             child: Text(
-          "please contact admin \nif you can't have account",textAlign: TextAlign.center,
+          "please contact admin \nif you can't have account",
+          textAlign: TextAlign.center,
           style: tigaTextStyle,
         )),
       );
