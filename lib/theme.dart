@@ -1,51 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import 'constants.dart';
+double defaultmargin = 30.0;
 
-ThemeData theme() {
-  return ThemeData(
-    scaffoldBackgroundColor: Colors.white,
-    fontFamily: "Muli",
-    appBarTheme: appBarTheme(),
-    textTheme: textTheme(),
-    inputDecorationTheme: inputDecorationTheme(),
-    visualDensity: VisualDensity.adaptivePlatformDensity,
-  );
-}
+Color primaryColor = Color(0xff2F539D);
+Color secondaryColor = Color(0xffFF989C);
+Color secondaryTwoColor = Color(0xffFD656B);
 
-InputDecorationTheme inputDecorationTheme() {
-  OutlineInputBorder outlineInputBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(28),
-    borderSide: BorderSide(color: kTextColor),
-    gapPadding: 10,
-  );
-  return InputDecorationTheme(
-    // If  you are using latest version of flutter then lable text and hint text shown like this
-    // if you r using flutter less then 1.20.* then maybe this is not working properly
-    // if we are define our floatingLabelBehavior in our theme then it's not applayed
-    floatingLabelBehavior: FloatingLabelBehavior.always,
-    contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 20),
-    enabledBorder: outlineInputBorder,
-    focusedBorder: outlineInputBorder,
-    border: outlineInputBorder,
-  );
-}
+Color fieldColor = Color(0xffE4E4E4);
 
-TextTheme textTheme() {
-  return TextTheme(
-    bodyText1: TextStyle(color: kTextColor),
-    bodyText2: TextStyle(color: kTextColor),
-  );
-}
+Color primaryTextColor = Color(0xff474747);
+Color secondaryTextColor = Color(0xffB4B4B4);
 
-AppBarTheme appBarTheme() {
-  return AppBarTheme(
-    color: Colors.white,
-    elevation: 0,
-    brightness: Brightness.light,
-    iconTheme: IconThemeData(color: Colors.black),
-    textTheme: TextTheme(
-      headline6: TextStyle(color: Color(0XFF8B8B8B), fontSize: 18),
-    ),
-  );
-}
+// satu
+TextStyle satuTextStyle = GoogleFonts.poppins(
+  color: primaryTextColor,
+  fontWeight: FontWeight.w600,
+  fontSize: 40,
+);
+
+// tiga
+TextStyle duaTextStyle = GoogleFonts.poppins(
+  color: primaryTextColor,
+  fontWeight: FontWeight.w500,
+  fontSize: 13,
+);
+
+// dua
+TextStyle tigaTextStyle = GoogleFonts.poppins(
+    color: secondaryTextColor, fontWeight: FontWeight.w400, fontSize: 12);

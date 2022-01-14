@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
-import '../size_config.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
@@ -16,19 +14,19 @@ class DefaultButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: getProportionateScreenHeight(62),
+      height: 62,
       child: TextButton(
         style: TextButton.styleFrom(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           primary: Colors.white,
-          backgroundColor: kPrimaryColor,
+          backgroundColor: Colors.white,
         ),
         onPressed: press as void Function()?,
         child: Text(
           text!,
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(20),
+          style: const TextStyle(
+            fontSize: 20,
             color: Colors.white,
             fontFamily: 'Larsseit',
           ),

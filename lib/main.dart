@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:reka/routes.dart';
-import 'package:reka/screens/loading_screen.dart';
+import 'package:reka/pages/sign_in_page.dart';
+import 'package:reka/pages/splash_page.dart';
+
 import 'package:reka/theme.dart';
 
 void main() {
@@ -13,10 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'REKAINDO',
-      theme: theme(),      
-      initialRoute: LoadingScreen.routeName,
-      routes: routes,
+      title: 'REKAINDO',      
+      routes: {
+        '/': (context) => SplashPage(),
+        '/sign-in': (context) => SignInPage(),
+      },
     );
   }
 }
