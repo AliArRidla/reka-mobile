@@ -51,8 +51,10 @@ class _HomePageState extends State<HomePage> {
         ),
         title: Container(
           width: 60,
-          child: Image(
-            image: AssetImage("assets/images/logo.png"),
+          child: Center(
+            child: Image(
+              image: AssetImage("assets/images/logo.png"),
+            ),
           ),
         ),
         actions: [
