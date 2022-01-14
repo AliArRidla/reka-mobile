@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:reka/pages/history_page.dart';
+import 'package:reka/pages/history/history_page.dart';
+import 'package:reka/pages/home/home_page.dart';
 import 'package:reka/pages/settings_page.dart';
 import 'package:reka/theme.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+class MainPage extends StatefulWidget {
+  MainPage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MainPageState extends State<MainPage> {
   // data dummy
   final List<Map> myProducts =
       List.generate(10, (index) => {"id": index, "name": "Product $index"})
@@ -48,7 +49,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         title: Container(
-          width: 60,
+          width: 80,
           child: Center(
             child: Image(
               image: AssetImage("assets/images/logo.png"),
@@ -69,13 +70,13 @@ class _HomePageState extends State<HomePage> {
         // currentIndex:1,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.dashboard),
             label: 'Dashboard',
             backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Machines',
+            icon: Icon(Icons.history),
+            label: 'History',
             backgroundColor: Colors.green,
           ),
           BottomNavigationBarItem(

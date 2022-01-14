@@ -42,3 +42,17 @@ TextStyle duaTextStyle = GoogleFonts.poppins(
 // dua
 TextStyle tigaTextStyle = GoogleFonts.poppins(
     color: secondaryTextColor, fontWeight: FontWeight.w400, fontSize: 12);
+
+// tiga
+TextStyle empatTextStyle = GoogleFonts.poppins(
+  color: primaryTextColor,
+  fontWeight: FontWeight.w500,
+  fontSize: 11,
+);
+
+// tiga
+TextStyle limaTextStyle = GoogleFonts.poppins(
+  color: primaryTextColor,
+  fontWeight: FontWeight.w300,
+  fontSize: 9,
+);
