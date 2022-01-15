@@ -7,7 +7,7 @@ Color primaryColor = Color(0xff2F539D);
 Color secondaryColor = Color(0xffFF989C);
 Color secondaryTwoColor = Color(0xffFD656B);
 
-Color fieldColor = Color(0xffE4E4E4);
+Color fieldColor = Color(0xfff1f1f1);
 
 Color primaryTextColor = Color(0xff474747);
 Color secondaryTextColor = Color(0xffB4B4B4);

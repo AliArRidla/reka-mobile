@@ -51,9 +51,12 @@ class _HomePageState extends State<HomePage> {
                       "Dashboard Mesin",
                       style: headingTextStyle,
                     ),
-                    Text(
-                      "Silahkan pilih mesin yang akan di check",
-                      style: tigaTextStyle,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        "Silahkan pilih mesin yang akan di check",
+                        style: tigaTextStyle,
+                      ),
                     ),
                   ],
                 ),
@@ -73,10 +76,10 @@ class _HomePageState extends State<HomePage> {
                       // );
 
                       return Container(
-                        margin: EdgeInsets.all(15),
+                        margin: EdgeInsets.all(10),
                         height: 127,
                         decoration: BoxDecoration(
-                          color: Color(0xfff1f1f1),
+                          color: fieldColor,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Center(

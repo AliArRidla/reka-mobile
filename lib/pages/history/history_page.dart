@@ -47,16 +47,26 @@ class _HistoryPageState extends State<HistoryPage> {
                   ],
                 ),
               ),
-              Text(
-                "History Log Mesin",
-                style: duaTextStyle,
-                textAlign: TextAlign.start,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Text(
+                  "History Log Mesin",
+                  style: duaTextStyle,
+                  textAlign: TextAlign.start,
+                ),
               ), // kok ngga bisa ?
               Expanded(
                 child: ListView.builder(
                   itemBuilder: (context, index) {
-                    return Card(
-                      elevation: 0.0,
+                    return Container(
+                      height: 70,
+                      // padding: EdgeInsets.symmetric(horizontal: 16),
+                      margin: EdgeInsets.only(bottom: 10),
+                      decoration: BoxDecoration(
+                        color: fieldColor,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      // elevation: 0.0,
                       child: ListTile(
                         title: Text(
                           bulan[index],

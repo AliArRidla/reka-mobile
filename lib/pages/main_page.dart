@@ -16,7 +16,7 @@ class _MainPageState extends State<MainPage> {
   final List<Map> myProducts =
       List.generate(10, (index) => {"id": index, "name": "Product $index"})
           .toList();
-  int selectedPage = 2;
+  int selectedPage = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
