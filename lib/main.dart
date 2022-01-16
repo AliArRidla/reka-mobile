@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reka/pages/main_page.dart';
+import 'package:reka/pages/pengecekan/pengecekan_page.dart';
 import 'package:reka/pages/sign_in_page.dart';
 import 'package:reka/pages/splash_page.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => SplashPage(),
         '/sign-in': (context) => SignInPage(),
         '/home': (context) => MainPage(),
+        '/pengecekan':(context) => PengecekanPage(),
       },
     );
   }

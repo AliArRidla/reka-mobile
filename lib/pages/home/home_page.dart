@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reka/pages/history/history_page.dart';
+import 'package:reka/pages/pengecekan/pengecekan_page.dart';
 import 'package:reka/pages/settings_page.dart';
 import 'package:reka/theme.dart';
 
@@ -36,9 +37,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: defaultmargin),
+    return Scaffold(      
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: defaultmargin),
         child: Center(
           child: Column(
             children: [
@@ -67,23 +68,26 @@ class _HomePageState extends State<HomePage> {
                         crossAxisCount: 2),
                     itemCount: myProducts.length,
                     itemBuilder: (BuildContext ctx, index) {
-                      // return Container(
-                      //   alignment: Alignment.center,
-                      //   child: Text(myProducts[index]["name"]),
-                      //   decoration: BoxDecoration(
-                      //       color: Colors.amber,
-                      //       borderRadius: BorderRadius.circular(15)),
-                      // );
-
-                      return Container(
-                        margin: EdgeInsets.all(10),
-                        height: 127,
-                        decoration: BoxDecoration(
-                          color: fieldColor,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Text(myProducts[index]["name"]),
+                      return InkWell(
+                        onTap: () {
+                          // Navigator.pushNamed(context, '/pengecekan');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PengecekanPage(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          height: 127,
+                          decoration: BoxDecoration(
+                            color: fieldColor,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Center(
+                            child: Text(myProducts[index]["name"]),
+                          ),
                         ),
                       );
                     }),

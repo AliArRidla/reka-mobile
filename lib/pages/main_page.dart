@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reka/pages/history/history_page.dart';
 import 'package:reka/pages/home/home_page.dart';
+import 'package:reka/pages/pengecekan/pengecekan_page.dart';
 import 'package:reka/pages/settings_page.dart';
 import 'package:reka/theme.dart';
 
@@ -34,7 +35,7 @@ class _MainPageState extends State<MainPage> {
     ),
   ];
 
-  final List<Widget> _myPages = [HomePage(), HistoryPage(), SettingPage()];
+  final List<Widget> _myPages = [HomePage(), HistoryPage(), SettingPage(),PengecekanPage()];
 
   @override
   Widget build(BuildContext context) {
