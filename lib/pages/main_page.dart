@@ -73,17 +73,17 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard),
             label: 'Dashboard',
-            backgroundColor: Colors.red,
+            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.history),
             label: 'History',
-            backgroundColor: Colors.green,
+            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
-            backgroundColor: Colors.pink,
+            
           ),
         ],
         currentIndex: selectedPage,
