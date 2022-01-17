@@ -18,129 +18,34 @@ class _ManualBookPageState extends State<ManualBookPage> {
         child: Column(
           children: [
             Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Mesin Laser",
-                      style: headingTextStyle,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Text(
-                        "Silahkan isi parameter mesin yang akan di check",
-                        style: tigaTextStyle,
-                      ),
-                    ),
-                  ],
-                ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: 20,
+                Text(
+                  "Model RM541",
+                  style: duaTextStyle.copyWith(color: secondaryColor),
                 ),
                 Text(
-                  'Type Check',
-                  style: duaTextStyle,
+                  "Mesin Laser",
+                  style: headingTextStyle,
                 ),
-                SizedBox(
-                  height: 8,
-                ),
-                Container(
-                  height: 50,
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  decoration: BoxDecoration(
-                    color: fieldColor,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(
-                    child: Row(
-                      children: [
-                        // Image.asset("assets/images/alternate_email.png"),
-                        Icon(
-                          Icons.date_range,
-                          color: secondaryTextColor,
-                        ),
-                        SizedBox(width: 20),
-                        Expanded(
-                          // child: TextFormField(
-                          //   decoration: InputDecoration.collapsed(
-                          //     hintText: "Weekly",
-                          //     fillColor: primaryColor,
-                          //   ),
-                          // ),
-                          child: DropdownButtonFormField(
-                            value: dropdownValue,
-                            icon: const Icon(Icons.arrow_downward),
-                            decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.transparent),
-                              ),
-                            ),
-                            elevation: 16,
-                            style: textButtonTextStyle,
-                            onChanged: (String? newValue) {
-                              setState(() {
-                                dropdownValue = newValue!;
-                              });
-                            },
-                            items: <String>['ThreeMonthly','Monthly','Weekly', 'Daily']
-                                .map<DropdownMenuItem<String>>((String value) {
-                              return DropdownMenuItem<String>(
-                                value: value,
-                                child: Text(value),
-                              );
-                            }).toList(),
-                          ),
-                        )
-                      ],
-                    ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Text(
+                    "Panduan buku manual mesin",
+                    style: tigaTextStyle,
                   ),
                 ),
               ],
             ),
+            // url video
+            // heading
+            // subheading
           ],
         ),
       );
     }
 
-    Widget manualBookButton() {
-      return Container(
-        height: 50,
-        width: double.infinity,
-        margin: EdgeInsets.only(top: 30),
-        child: TextButton(
-          onPressed: () {
-            Navigator.pushNamed(context, "/home");
-          },
-          style: TextButton.styleFrom(
-            backgroundColor: secondaryColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.library_books,
-                color: Colors.white,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                "Manual Books",
-                style: buttonTextStyle,
-              ),
-            ],
-          ),
-        ),
-      );
-    }
-
-    Widget checkInButton() {
+    Widget downloadButton() {
       return Container(
         height: 50,
         width: double.infinity,
@@ -150,15 +55,36 @@ class _ManualBookPageState extends State<ManualBookPage> {
             Navigator.pushNamed(context, "/home");
           },
           style: TextButton.styleFrom(
-            backgroundColor: primaryColor,
+            backgroundColor: primaryTextColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          child: Text(
-            "Continue",
-            style: buttonTextStyle,
+          child: Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.download,color: secondaryTextColor,),
+              Text(
+                "Download",
+                style: buttonTextStyle,
+              ),
+            ],
           ),
+        ),
+      );
+    }
+
+    Widget playButton() {
+      return Container(
+        height: 153,
+        margin: EdgeInsets.only(
+          top: 15,
+        ),
+        decoration: BoxDecoration(
+          color: Color(0xffff5656),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Center(
+          child: Icon(Icons.play_arrow,size: 40,color: Colors.white,),
         ),
       );
     }
@@ -208,9 +134,10 @@ class _ManualBookPageState extends State<ManualBookPage> {
         child: Column(
           children: [
             typeCheck(),
-            Spacer(),
-            manualBookButton(),
-            checkInButton(),
+            // Spacer(),
+            playButton(),
+            // manualBookButton(),
+            downloadButton(),
           ],
         ),
       ),
