@@ -44,17 +44,18 @@ class _HistoryPageState extends State<HistoryPage> {
                       "Ini adalah daftar list mesin yang sudah di check",
                       style: tigaTextStyle,
                     ),
+                    SizedBox(height: 6,)
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 6),
-                child: Text(
-                  "History Log Mesin",
-                  style: duaTextStyle,
-                  textAlign: TextAlign.start,
-                ),
-              ), // kok ngga bisa ?
+              // Padding(
+              //   padding: const EdgeInsets.only(bottom: 6),
+              //   child: Text(
+              //     "History Log Mesin",
+              //     style: duaTextStyle,
+              //     textAlign: TextAlign.start,
+              //   ),
+              // ), // kok ngga bisa ?
               Expanded(
                 child: ListView.builder(
                   itemBuilder: (context, index) {

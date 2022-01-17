@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reka/pages/history/history_page.dart';
 import 'package:reka/pages/pengecekan/pengecekan_page.dart';
-import 'package:reka/pages/settings_page.dart';
+import 'package:reka/pages/settings/settings_page.dart';
 import 'package:reka/theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<Map> myProducts =
-      List.generate(10, (index) => {"id": index, "name": "Product $index"})
+      List.generate(10, (index) => {"id": index, "name": "Mesin $index"})
           .toList();
   int selectedPage = 2;
   static const TextStyle optionStyle =

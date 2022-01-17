@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:reka/theme.dart';
 
-class PengecekanPage extends StatefulWidget {
+class ManualBookPage extends StatefulWidget {
   @override
-  State<PengecekanPage> createState() => _PengecekanPageState();
+  State<ManualBookPage> createState() => _ManualBookPageState();
 }
 
-class _PengecekanPageState extends State<PengecekanPage> {
-  // const PengecekanPage({Key? key}) : super(key: key);
+class _ManualBookPageState extends State<ManualBookPage> {
+  // const ManualBookPage({Key? key}) : super(key: key);
   String dropdownValue = 'Weekly';
 
   @override
@@ -111,7 +111,7 @@ class _PengecekanPageState extends State<PengecekanPage> {
         margin: EdgeInsets.only(top: 30),
         child: TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, "/manual-books");
+            Navigator.pushNamed(context, "/home");
           },
           style: TextButton.styleFrom(
             backgroundColor: secondaryColor,

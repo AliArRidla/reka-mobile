@@ -26,6 +26,12 @@ TextStyle buttonTextStyle = GoogleFonts.poppins(
   fontSize: 20,
 );
 
+TextStyle textButtonTextStyle = GoogleFonts.poppins(
+  color: primaryColor,
+  fontWeight: FontWeight.w500,
+  fontSize: 15,
+);
+
 TextStyle headingTextStyle = GoogleFonts.poppins(
   color: primaryTextColor,
   fontWeight: FontWeight.w500,
