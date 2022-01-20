@@ -79,9 +79,9 @@ class _PengecekanPageState extends State<PengecekanPage> {
                             ),
                             elevation: 16,
                             style: textButtonTextStyle,
-                            onChanged: (String? newValue) {
+                            onChanged: (String newValue) {
                               setState(() {
-                                dropdownValue = newValue!;
+                                dropdownValue = newValue;
                               });
                             },
                             items: <String>['ThreeMonthly','Monthly','Weekly', 'Daily']

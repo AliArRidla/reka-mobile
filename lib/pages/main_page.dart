@@ -6,7 +6,7 @@ import 'package:reka/pages/settings/settings_page.dart';
 import 'package:reka/theme.dart';
 
 class MainPage extends StatefulWidget {
-  MainPage({Key? key}) : super(key: key);
+  MainPage({Key key}) : super(key: key);
 
   @override
   _MainPageState createState() => _MainPageState();
@@ -45,8 +45,11 @@ class _MainPageState extends State<MainPage> {
         elevation: 0.0,
         leading: Padding(
           padding: const EdgeInsets.only(left: 25),
-          child: Image(
-            image: AssetImage("assets/images/profile.png"),
+          child: InkWell(
+            onTap: () => Navigator.pushNamed(context, "/profile"),
+            child: Image(
+              image: AssetImage("assets/images/profile.png"),
+            ),
           ),
         ),
         title: Container(

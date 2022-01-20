@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reka/theme.dart';
 
 class HistoryPage extends StatefulWidget {
-  const HistoryPage({Key? key}) : super(key: key);
+  const HistoryPage({Key key}) : super(key: key);
 
   @override
   _HistoryPageState createState() => _HistoryPageState();

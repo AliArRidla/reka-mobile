@@ -5,7 +5,7 @@ import 'package:reka/pages/settings/settings_page.dart';
 import 'package:reka/theme.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
