@@ -18,22 +18,6 @@ class _MainPageState extends State<MainPage> {
       List.generate(10, (index) => {"id": index, "name": "Product $index"})
           .toList();
   int selectedPage = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Dashboard',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Machines',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Settings',
-      style: optionStyle,
-    ),
-  ];
 
   final List<Widget> _myPages = [HomePage(), HistoryPage(), SettingPage(),PengecekanPage()];
 

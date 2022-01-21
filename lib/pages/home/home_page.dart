@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:reka/pages/history/history_page.dart';
+// import 'package:reka/pages/history/history_page.dart';
 import 'package:reka/pages/pengecekan/pengecekan_page.dart';
-import 'package:reka/pages/settings/settings_page.dart';
+// import 'package:reka/pages/settings/settings_page.dart';
 import 'package:reka/theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,28 +16,12 @@ class _HomePageState extends State<HomePage> {
       List.generate(10, (index) => {"id": index, "name": "Mesin $index"})
           .toList();
   int selectedPage = 2;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Dashboard',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Machines',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Settings',
-      style: optionStyle,
-    ),
-  ];
 
-  final List<Widget> _myPages = [HomePage(), HistoryPage(), SettingPage()];
+  // final List<Widget> _myPages = [HomePage(), HistoryPage(), SettingPage()];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(      
+    return Scaffold(
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: defaultmargin),
         child: Center(
@@ -86,7 +70,30 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Center(
-                            child: Text(myProducts[index]["name"]),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 20),
+                                  child: Image(
+                                    image: AssetImage(
+                                        "assets/images/mesins/machine-1.png"),
+                                  ),
+                                ),
+                                Text(
+                                  "Nama Mesin",
+                                  style: duaTextStyle.copyWith(
+                                      color: primaryColor,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                Text(
+                                  myProducts[index]["name"],
+                                  style: tigaTextStyle.copyWith(
+                                      color: secondaryColor),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       );
