@@ -19,7 +19,7 @@ class _MainPageState extends State<MainPage> {
           .toList();
   int selectedPage = 0;
 
-  final List<Widget> _myPages = [HomePage(), HistoryPage(), SettingPage(),PengecekanPage()];
+  final List<Widget> _myPages = [HomePage(), HistoryPage(), SettingPage()];
 
   @override
   Widget build(BuildContext context) {

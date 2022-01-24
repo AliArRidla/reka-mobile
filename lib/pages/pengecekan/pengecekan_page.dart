@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:reka/models/machine_model.dart';
 import 'package:reka/theme.dart';
 
 class PengecekanPage extends StatefulWidget {
+  final MachineModel machine;
+  PengecekanPage(this.machine);
   @override
   State<PengecekanPage> createState() => _PengecekanPageState();
 }
@@ -18,21 +21,21 @@ class _PengecekanPageState extends State<PengecekanPage> {
         child: Column(
           children: [
             Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Mesin Laser",
-                      style: headingTextStyle,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Text(
-                        "Silahkan isi parameter mesin yang akan di check",
-                        style: tigaTextStyle,
-                      ),
-                    ),
-                  ],
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Mesin Laser",
+                  style: headingTextStyle,
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Text(
+                    "Silahkan isi parameter mesin yang akan di check",
+                    style: tigaTextStyle,
+                  ),
+                ),
+              ],
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -74,7 +77,8 @@ class _PengecekanPageState extends State<PengecekanPage> {
                             icon: const Icon(Icons.arrow_downward),
                             decoration: InputDecoration(
                               enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.transparent),
+                                borderSide:
+                                    BorderSide(color: Colors.transparent),
                               ),
                             ),
                             elevation: 16,
@@ -84,8 +88,12 @@ class _PengecekanPageState extends State<PengecekanPage> {
                                 dropdownValue = newValue;
                               });
                             },
-                            items: <String>['ThreeMonthly','Monthly','Weekly', 'Daily']
-                                .map<DropdownMenuItem<String>>((String value) {
+                            items: <String>[
+                              'ThreeMonthly',
+                              'Monthly',
+                              'Weekly',
+                              'Daily'
+                            ].map<DropdownMenuItem<String>>((String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
                                 child: Text(value),

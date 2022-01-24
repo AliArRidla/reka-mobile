@@ -8,6 +8,7 @@ import 'package:reka/pages/profile/profile_page.dart';
 import 'package:reka/pages/sign_in_page.dart';
 import 'package:reka/pages/splash_page.dart';
 import 'package:reka/providers/auth_provider.dart';
+import 'package:reka/providers/machine_provider.dart';
 
 // import 'package:reka/theme.dart';
 
@@ -30,6 +31,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => AuthProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => MachineProvider(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -38,7 +42,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => SplashPage(),
           '/sign-in': (context) => SignInPage(),
           '/home': (context) => MainPage(),
-          '/pengecekan': (context) => PengecekanPage(),
+          // '/pengecekan': (context) => PengecekanPage(),
           '/manual-books': (context) => ManualBookPage(),
           '/profile': (context) => ProfilePage(),
         },
