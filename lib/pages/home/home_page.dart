@@ -4,7 +4,7 @@ import 'package:reka/models/user_model.dart';
 import 'package:reka/providers/auth_provider.dart';
 import 'package:reka/providers/machine_provider.dart';
 import 'package:reka/theme.dart';
-import 'package:reka/widgets/machine_tile.dart';
+import 'package:reka/widgets/card_machine.dart';
 
 class HomePage extends StatelessWidget {
   // const HomePage({ Key? key }) : super(key: key);
@@ -42,19 +42,38 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: machineProvider.machines
               .map(
-                (machine) => MachineTile(machine),
+                (machine) => CardMachine(machine),
               )
               .toList(),
         ),
       );
     }
 
-
-    return ListView(
-      children: [
-        headers(),
-        machines(),
-      ],
+    return Scaffold(
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: defaultmargin),
+        child: Center(
+          child: Column(
+            children: [
+              headers(),
+              Expanded(
+                child: ListView(
+                  children: [
+                    machines(),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
+
+    // return ListView(
+    //   children: [
+    //     headers(),
+    //     machines(),
+    //   ],
+    // );
   }
 }

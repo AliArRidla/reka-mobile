@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:reka/providers/machine_provider.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key key}) : super(key: key);
@@ -13,9 +15,15 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     // TODO: implement initState
-    Timer(const Duration(seconds: 5),
-        () => Navigator.pushNamed(context, "/sign-in"));
+    getInit();
+    // Timer(const Duration(seconds: 5),
+    // () => Navigator.pushNamed(context, "/sign-in"));
     super.initState();
+  }
+
+  getInit() async {
+    await Provider.of<MachineProvider>(context,listen: false).getMachines();
+    Navigator.pushNamed(context, "/sign-in");
   }
 
   @override

@@ -60,17 +60,14 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard),
             label: 'Dashboard',
-            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.history),
             label: 'History',
-            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
-            
           ),
         ],
         currentIndex: selectedPage,

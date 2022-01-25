@@ -14,7 +14,7 @@ class MachineService {
     print(response.body);
 
     if (response.statusCode == 200) {
-      List data = jsonDecode(response.body)['data']['data'];
+      List data = jsonDecode(response.body)['data'];
       List<MachineModel> machines = [];
 
       for (var item in data) {
