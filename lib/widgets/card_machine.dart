@@ -26,24 +26,33 @@ class CardMachine extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: Center(
-          child: Column(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: Image(
-                  image: AssetImage("assets/images/mesins/machine-1.png"),
+                padding: const EdgeInsets.only(left: 20),
+                child: SizedBox(
+                  width: 70,
+                  child: Image(
+                    image: AssetImage("assets/images/mesins/machine-1.png"),
+                  ),
                 ),
               ),
-              Text(
-                '${machine.nama_mesin}',
-                style: duaTextStyle.copyWith(
-                    color: primaryColor, fontWeight: FontWeight.w500),
-              ),
-              Text(
-                '\$${machine.type_mesin}',
-                style: tigaTextStyle.copyWith(color: secondaryColor),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '${machine.nama_mesin}',
+                    style: duaTextStyle.copyWith(
+                        color: primaryColor, fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    '\$${machine.type_mesin}',
+                    style: tigaTextStyle.copyWith(color: secondaryColor),
+                  ),
+                ],
               ),
             ],
           ),
