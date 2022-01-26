@@ -42,7 +42,7 @@ TextStyle headingTextStyle = GoogleFonts.poppins(
 TextStyle duaTextStyle = GoogleFonts.poppins(
   color: primaryTextColor,
   fontWeight: FontWeight.w500,
-  fontSize: 13,
+  fontSize: 14,
 );
 
 // dua

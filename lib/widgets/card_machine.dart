@@ -31,7 +31,7 @@ class CardMachine extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: SizedBox(
                   width: 70,
                   child: Image(
@@ -49,7 +49,7 @@ class CardMachine extends StatelessWidget {
                         color: primaryColor, fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    '\$${machine.type_mesin}',
+                    '${machine.type_mesin}',
                     style: tigaTextStyle.copyWith(color: secondaryColor),
                   ),
                 ],

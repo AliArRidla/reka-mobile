@@ -187,6 +187,7 @@ class _SignInPageState extends State<SignInPage> {
     }
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.symmetric(
@@ -197,11 +198,16 @@ class _SignInPageState extends State<SignInPage> {
               SizedBox(),
               header(),
               SizedBox(),
-              emailInput(),
-              passwordInput(),
-              isLoading ? LoadingButton() : signInButton(),
-              Spacer(),
-              footer(),
+              Expanded(
+                  child: Column(
+                children: [
+                  emailInput(),
+                  passwordInput(),
+                  isLoading ? LoadingButton() : signInButton(),
+                  Spacer(),
+                  footer(),
+                ],
+              )),
             ],
           ),
         ),
