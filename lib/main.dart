@@ -9,6 +9,7 @@ import 'package:reka/pages/sign_in_page.dart';
 import 'package:reka/pages/splash_page.dart';
 import 'package:reka/providers/auth_provider.dart';
 import 'package:reka/providers/machine_provider.dart';
+import 'package:reka/providers/parameter_provider.dart';
 
 // import 'package:reka/theme.dart';
 
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => MachineProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ParameterProvider(),
         ),
       ],
       child: MaterialApp(
