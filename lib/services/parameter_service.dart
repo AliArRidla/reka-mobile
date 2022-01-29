@@ -5,7 +5,7 @@ import 'package:reka/models/machine_model.dart';
 import 'package:reka/models/parameter_model.dart';
 
 class ParameterService {
-  String baseUrl = 'http://127.0.0.1:8000/api';
+  String baseUrl = 'http://141.144.195.119/api';
 
   Future<List<ParameterModel>> getParameters() async {
     var url = '$baseUrl/parameters';
