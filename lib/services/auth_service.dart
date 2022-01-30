@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:reka/models/user_model.dart';
 
 class AuthService {
-  String baseUrl = 'http://141.144.195.119/api';
+  String baseUrl = 'http://158.101.200.168/api';
 
   Future<UserModel> login({
     String email,
