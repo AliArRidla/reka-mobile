@@ -25,7 +25,7 @@ class _PengecekanPageState extends State<PengecekanPage> {
           children: [
             Text(
               // "Mesin Laser",
-              widget.machine.nama_mesin,
+              widget.machine.nama_mesin,han
               style: headingTextStyle,
             ),
             Padding(
