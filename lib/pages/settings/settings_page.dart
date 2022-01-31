@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:reka/providers/auth_provider.dart';
 import 'package:reka/theme.dart';
 
 class SettingPage extends StatefulWidget {
@@ -11,6 +13,12 @@ class SettingPage extends StatefulWidget {
 class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    
+    handleSignOut()async{
+      
+    }
+
     Widget header() {
       return Container(
         padding: const EdgeInsets.only(top: 15),
@@ -26,7 +34,7 @@ class _SettingPageState extends State<SettingPage> {
             Padding(
               padding: const EdgeInsets.only(bottom: 10),
               child: Text(
-                "Silahkan isi parameter mesin yang akan di check",
+                "Silahkan atur sesuai keinginan anda",
                 // widget.machine.id.toString(),
                 style: tigaTextStyle,
               ),
@@ -45,7 +53,7 @@ class _SettingPageState extends State<SettingPage> {
           // onPressed: () {
           //   Navigator.pushNamed(context, "/home");
           // },
-          onPressed: (){},
+          onPressed: handleSignOut,
           style: TextButton.styleFrom(
             backgroundColor: secondaryColor,
             shape: RoundedRectangleBorder(
@@ -62,14 +70,15 @@ class _SettingPageState extends State<SettingPage> {
 
     return Scaffold(
       body: Center(
-        child: Column(
-          children: [
-            header(),
-            signOutButton(),
-            Container(
-              child: Text("ini settings"),
-            ),
-          ],
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: defaultmargin),
+          child: Column(
+            children: [
+              header(),
+              signOutButton(),
+              
+            ],
+          ),
         ),
       ),
     );

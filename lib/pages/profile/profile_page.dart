@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:reka/models/user_model.dart';
+import 'package:reka/providers/auth_provider.dart';
 import 'package:reka/theme.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -6,9 +9,11 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    UserModel user = authProvider.user;
     Widget fotoProfile() {
       return Container(
-        margin: EdgeInsets.only(top: 20,bottom: 30),
+        margin: EdgeInsets.only(top: 20, bottom: 30),
         width: 70,
         height: 70,
         child: CircleAvatar(
@@ -18,7 +23,7 @@ class ProfilePage extends StatelessWidget {
       );
     }
 
-    Widget fieldProfile() {
+    Widget namaProfile() {
       return Container(
         margin: EdgeInsets.only(top: 15),
         height: 50,
@@ -33,9 +38,52 @@ class ProfilePage extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          child: Text(
-            "Ali Ridla",
-            style: textButtonTextStyle.copyWith(color: secondaryTextColor),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Nama : ",
+                style: textButtonTextStyle.copyWith(color: secondaryColor),
+              ),
+              Text(
+                user.name,
+                style: textButtonTextStyle.copyWith(color: secondaryTextColor),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    Widget emailProfile() {
+      return Container(
+        margin: EdgeInsets.only(top: 15),
+        height: 50,
+        width: double.infinity,
+        child: TextButton(
+          onPressed: () {
+            Navigator.pushNamed(context, "/home");
+          },
+          style: TextButton.styleFrom(
+            backgroundColor: fieldColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Email nya :',
+                style: textButtonTextStyle.copyWith(color: secondaryColor),
+              ),
+              Text(
+                user.email,
+                style: textButtonTextStyle.copyWith(color: secondaryTextColor),
+              ),
+            ],
           ),
         ),
       );
@@ -83,7 +131,11 @@ class ProfilePage extends StatelessWidget {
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: defaultmargin),
         child: Column(
-          children: [fotoProfile(), fieldProfile(),fieldProfile(),fieldProfile()],
+          children: [
+            fotoProfile(),
+            namaProfile(),
+            emailProfile(),
+          ],
         ),
       ),
     );
